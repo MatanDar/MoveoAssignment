@@ -1,0 +1,12 @@
+body{
+  background-color: rgb(231 ,244 ,254) !important;
+}
+.App {
+  text-align: -webkit-center;
+  text-align-last: center;
+}
+
+.all-users-style{
+  box-shadow: 10px 10px red !important;
+}
+
