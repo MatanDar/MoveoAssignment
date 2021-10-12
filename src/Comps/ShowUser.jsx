@@ -28,7 +28,7 @@ export default function ShowUser(props) {
     }, [props])
 
     return (
-        <div>
+        <div className='page-container'>
             <h1>User Details:</h1>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 980, maxWidth: 980 }} size="small" >
