@@ -9,6 +9,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import SimpleMap from './Map'
 import RoomIcon from '@mui/icons-material/Room';
+import '../Comps/MediaQuery.css'
 
 
 export default function ShowUser(props) {

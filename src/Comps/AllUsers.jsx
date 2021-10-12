@@ -12,7 +12,7 @@ import ArrowLeftOutlinedIcon from '@mui/icons-material/ArrowLeftOutlined';
 import ArrowRightOutlinedIcon from '@mui/icons-material/ArrowRightOutlined';
 import Button from '@mui/material/Button';
 import { useHistory } from "react-router-dom";
-
+import '../Comps/MediaQuery.css'
 import {
 
     Link

@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import React from 'react';
 import ShowUser from './Comps/ShowUser';
+import './Comps/MediaQuery.css'
 
 
 function App() {
