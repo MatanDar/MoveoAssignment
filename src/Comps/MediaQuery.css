@@ -1,16 +1,11 @@
 @media only screen and (max-width: 728px) {
-    .table-container{
+    .table-container {
         min-width: 200px;
-    
     }
+}
 
-
+@media only screen and (max-width: 600px) {
+    .table-container {
+        min-width: 100px;
     }
-
-    @media only screen and (max-width: 600px) {
-        .table-container{
-            min-width: 100px;
-        
-        }
-    
-        }
+}

@@ -3,13 +3,16 @@ import GoogleMapReact from 'google-map-react';
 import './style.css'
 import RoomIcon from '@mui/icons-material/Room';
 
-const AnyReactComponent = ({ text }) => <div className="red-text">{text}</div>;
+
+const MapPin = ({ pic }) => {
+    return <RoomIcon></RoomIcon>
+}
 
 function SimpleMap(props) {
 
     return (
         // Important! Always set the container height explicitly
-        <div style={{ height: '75vh', width: '80vw' }}>
+        <div style={{ height: '75vh', width: '80vw', marginBottom: "2em" }}>
             <GoogleMapReact
                 bootstrapURLKeys={{ key: "AIzaSyCwHNBrLVCEewbxBDq5oxjoiGWmO5RGwrM" }}
                 defaultCenter={{
@@ -22,14 +25,13 @@ function SimpleMap(props) {
                 }}
                 defaultZoom={11}
             >
-                <AnyReactComponent
+                <MapPin
                     lat={parseFloat(props.lat)}
                     lng={parseFloat(props.lng)}
-                    text={"."}
+                    pic={RoomIcon}
                 >
-                </AnyReactComponent>
 
-
+                </MapPin>
             </GoogleMapReact>
         </div>
     );

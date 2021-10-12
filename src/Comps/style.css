@@ -42,9 +42,6 @@ tbody:nth-child(even) {
     border-radius: 29px;
 }
 
-.MuiTableContainer-root {
-    /* box-shadow: none !important; */
-}
 
 .pagination-controlers {
     width: 100%;
@@ -71,7 +68,8 @@ tbody:nth-child(even) {
     min-width: 980px;
 }
 
-/* th{
-    white-space: nowrap;
+.red-text{
+    font-size: 10em;
+    color: red;
+}
 
-} */

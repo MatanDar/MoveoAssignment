@@ -51,7 +51,7 @@ export default function ShowUser(props) {
                                 <TableRow>
                                     <TableCell>{1}</TableCell>
                                     <TableCell><img className="round-pic" src={item.picture.thumbnail} /></TableCell>
-                                    <TableCell>{item.name.first.charAt(0)}.{item.name.last.charAt(0)}</TableCell>
+                                    <TableCell>{item.name.first.charAt(0)}.{item.name.last}</TableCell>
                                     <TableCell>{item.email}</TableCell>
                                     <TableCell>{item.gender}</TableCell>
                                     <TableCell>{item.registered.age}</TableCell>

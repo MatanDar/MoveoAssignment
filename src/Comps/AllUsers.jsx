@@ -14,31 +14,17 @@ import Button from '@mui/material/Button';
 import { useHistory } from "react-router-dom";
 import '../Comps/MediaQuery.css'
 import {
-
     Link
 } from "react-router-dom";
 
 
 export default function AllUsers(props) {
     const history = useHistory();
-    const [shownIndex, setShownIndex] = React.useState(0)
     const [maxIndex, setMaxIndex] = React.useState(Infinity)
     let [counter, setCounter] = React.useState(1)
     let [formattedPage, setFormattedPage] = React.useState(0)
-
     let [shownUsers, setShownUsers] = React.useState([])
     let [wasSorted, setWasSorted] = React.useState(false)
-
-    try {
-        React.useEffect(() => {
-            setMaxIndex(props.allUsers.length)
-            setShownUsers(props.allUsers.slice(formattedPage + "0", (parseInt(formattedPage + "0") + 10)))
-
-        }, [props.allUsers])
-    }
-    catch (err) {
-        console.log(`the error is ${err}`)
-    }
 
     React.useEffect(() => {
         let tempFormattedPage = props.page.slice(props.page.lastIndexOf("/") + 1)
@@ -47,42 +33,43 @@ export default function AllUsers(props) {
         setShownUsers(props.allUsers.slice(tempFormattedPage + "0", (parseInt(tempFormattedPage + "0") + 10)))
     }, [props.page])
 
+    try {
+        React.useEffect(() => {
+            setMaxIndex(props.allUsers.length)
+            setShownUsers(props.allUsers.slice(formattedPage + "0", (parseInt(formattedPage + "0") + 10)))
+        }, [props.allUsers])
+    }
+    catch (err) {
+        console.log(`the error is ${err}`)
+    }
+
+
     function paginationDec() {
-        let currentShownIndex = shownIndex
         if (formattedPage == 0) {
             return
         }
         else {
-            history.push("/page/" + ((formattedPage * 1) - 1))
+            history.push("/page/" + (parseInt(formattedPage) - 1))
             setFormattedPage(formattedPage - 1)
             setShownUsers(props.allUsers.slice((formattedPage - 1) + "0", (parseInt((formattedPage - 1) + "0") + 10)))
-
-            setShownIndex(currentShownIndex - 10)
             setCounter(counter - 10)
         }
     }
     function paginationInc() {
-        let currentShownIndex = shownIndex
         if (parseInt(formattedPage + "0") + 10 >= maxIndex) {
             return
         }
         else {
-            history.push("/page/" + ((formattedPage * 1) + 1))
+            history.push("/page/" + (parseInt(formattedPage) + 1))
             setFormattedPage(formattedPage + 1)
             setShownUsers(props.allUsers.slice((formattedPage + 1) + "0", (parseInt((formattedPage + 1) + "0") + 10)))
-
-            setShownIndex(currentShownIndex + 10)
             setCounter(counter + 10)
         }
     }
 
     function handleClickSort(ev) {
-
-
         let name = ev.target.getAttribute("name")
         let currentlyShownEntries = props.allUsers.slice(formattedPage + "0", (parseInt(formattedPage + "0") + 10))
-
-
         if (name.includes("age")) {
             currentlyShownEntries = currentlyShownEntries.sort((x, y) => {
                 return parseInt(name.split(".").reduce((a, b) => a[b], x)) - name.split(".").reduce((a, b) => a[b], y)
@@ -93,7 +80,6 @@ export default function AllUsers(props) {
                 return name.split(".").reduce((a, b) => a[b], x).localeCompare(name.split(".").reduce((a, b) => a[b], y))
             })
         }
-
         if (wasSorted) {
             setShownUsers(currentlyShownEntries.reverse())
         }
@@ -101,7 +87,6 @@ export default function AllUsers(props) {
 
             setShownUsers(currentlyShownEntries)
         }
-
         setWasSorted(!wasSorted)
     }
 
@@ -115,10 +100,10 @@ export default function AllUsers(props) {
                             <TableRow >
                                 <TableCell >#</TableCell>
                                 <TableCell>Picture</TableCell>
-                                <TableCell className='sort' value="harta" name="name.first" onClick={handleClickSort}>Full Name</TableCell>
-                                <TableCell className='sort'name="email" onClick={handleClickSort}>Email</TableCell>
-                                <TableCell className='sort'name="gender" onClick={handleClickSort}>Gender</TableCell>
-                                <TableCell className='sort'name="registered.age" onClick={handleClickSort}>Age</TableCell>
+                                <TableCell className='sort' name="name.first" onClick={handleClickSort}>Full Name</TableCell>
+                                <TableCell className='sort' name="email" onClick={handleClickSort}>Email</TableCell>
+                                <TableCell className='sort' name="gender" onClick={handleClickSort}>Gender</TableCell>
+                                <TableCell className='sort' name="registered.age" onClick={handleClickSort}>Age</TableCell>
                             </TableRow>
                         </TableHead>
 
@@ -143,28 +128,25 @@ export default function AllUsers(props) {
             </TableContainer>
             <div className='pagination-controlers'>
                 <Button onClick={paginationDec}><ArrowLeftOutlinedIcon />Previous Page</Button>
-                {/* <div style={{ width: "10%" }}> */}
-                    {(() => {
-                        if (formattedPage) {
-                            return (
-                                <>
-                                    {parseInt(formattedPage) - 1 < 0 ? "" : <Link to={`/page/${parseInt(formattedPage) - 1}`} >{parseInt(formattedPage) - 1}</Link>}
-                                    <Link to={`/page/${formattedPage}`}>{formattedPage}</Link>
-                                    {((parseInt(formattedPage) * 10) + 10) + 1 >= maxIndex ? "" : <Link to={`/page/${parseInt(formattedPage) + 1}`}>{parseInt(formattedPage) + 1}</Link>}
-                                </>
-                            )
-                        }
-                        else {
-                            return (
-                                <>
-                                    <Link to='/page/0' >{0}</Link>
-                                    <Link to='/page/1' >{1}</Link>
-                                </>
-                            )
-                        }
-                    })()}
-                {/* </div> */}
-
+                {(() => {
+                    if (formattedPage) {
+                        return (
+                            <>
+                                {parseInt(formattedPage) - 1 < 0 ? "" : <Link to={`/page/${parseInt(formattedPage) - 1}`} >{parseInt(formattedPage) - 1}</Link>}
+                                <Link to={`/page/${formattedPage}`}>{formattedPage}</Link>
+                                {((parseInt(formattedPage) * 10) + 10) >= maxIndex ? "" : <Link to={`/page/${parseInt(formattedPage) + 1}`}>{parseInt(formattedPage) + 1}</Link>}
+                            </>
+                        )
+                    }
+                    else {
+                        return (
+                            <>
+                                <Link to='/page/0'>{0}</Link>
+                                <Link to='/page/1'>{1}</Link>
+                            </>
+                        )
+                    }
+                })()}
                 <Button onClick={paginationInc}>Next Page<ArrowRightOutlinedIcon /></Button>
             </div>
         </div>

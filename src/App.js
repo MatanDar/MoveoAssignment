@@ -19,7 +19,9 @@ function App() {
         const res = await fetch('https://randomuser.me/api/?results=5000&seed=matan')
         const data = await res.json()
         console.log(data.results.length);
-        if (data.results) setAllUsers(data.results)
+        if (data.results) {
+          setAllUsers(data.results)
+        }
       }
       catch (err) {
         console.log(err);
@@ -33,14 +35,12 @@ function App() {
 
   function zoomOutMobile() {
     var viewport = document.querySelector('meta[name="viewport"]');
-  
-    if ( viewport ) {
+
+    if (viewport) {
       viewport.content = "initial-scale=0.1";
       viewport.content = "width=1200";
     }
   }
-  
-  
 
   return (
     <div className="App">
