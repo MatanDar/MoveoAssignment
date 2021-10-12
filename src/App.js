@@ -15,7 +15,7 @@ function App() {
   React.useEffect(() => {
     async function fetchAllUsers() {
       try {
-        const res = await fetch('https://randomuser.me/api/?results=40&seed=matan')
+        const res = await fetch('https://randomuser.me/api/?results=5000&seed=matan')
         const data = await res.json()
         console.log(data.results.length);
         if (data.results) setAllUsers(data.results)

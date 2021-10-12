@@ -9,6 +9,10 @@ table {
     border: 1px solid black;
     border-collapse: collapse;
 }
+table.center {
+    margin-left: auto; 
+    margin-right: auto;
+  }
 
 a {
     color: #213fa0;
@@ -49,8 +53,8 @@ tbody:nth-child(even) {
 .pagination-controlers {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .MuiTableContainer-root {
@@ -60,8 +64,10 @@ tbody:nth-child(even) {
 .all-users-style {
     box-shadow: 5px 8px red !important;
 }
+.page-container{
+    width: fit-content;
 
-.my-container{
-    width: 100%;
-    text-align: center;
+}
+.sort{
+    cursor: pointer;
 }

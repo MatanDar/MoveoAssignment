@@ -1,6 +1,7 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import './style.css'
+import RoomIcon from '@mui/icons-material/Room';
 
 const AnyReactComponent = ({ text }) => <div className="red-text">{text}</div>;
 
@@ -28,7 +29,7 @@ function SimpleMap(props) {
                 >
                 </AnyReactComponent>
 
-                
+
             </GoogleMapReact>
         </div>
     );

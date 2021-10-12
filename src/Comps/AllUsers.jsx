@@ -44,7 +44,6 @@ export default function AllUsers(props) {
         let tempFormattedPage = props.page.slice(props.page.lastIndexOf("/") + 1)
         setFormattedPage(tempFormattedPage)
         setCounter(tempFormattedPage)
-
         setShownUsers(props.allUsers.slice(tempFormattedPage + "0", (parseInt(tempFormattedPage + "0") + 10)))
     }, [props.page])
 
@@ -107,7 +106,7 @@ export default function AllUsers(props) {
     }
 
     return (
-        <div >
+        <div className='page-container'>
             <h1>All Users:</h1>
             <TableContainer style={{ width: "fit-content" }} component={Paper}>
                 <Box sx={{ boxShadow: 20 }}>
@@ -116,10 +115,10 @@ export default function AllUsers(props) {
                             <TableRow >
                                 <TableCell >#</TableCell>
                                 <TableCell>Picture</TableCell>
-                                <TableCell value="harta" name="name.first" onClick={handleClickSort}>Full Name</TableCell>
-                                <TableCell name="email" onClick={handleClickSort}>Email</TableCell>
-                                <TableCell name="gender" onClick={handleClickSort}>Gender</TableCell>
-                                <TableCell name="registered.age" onClick={handleClickSort}>Age</TableCell>
+                                <TableCell className='sort' value="harta" name="name.first" onClick={handleClickSort}>Full Name</TableCell>
+                                <TableCell className='sort'name="email" onClick={handleClickSort}>Email</TableCell>
+                                <TableCell className='sort'name="gender" onClick={handleClickSort}>Gender</TableCell>
+                                <TableCell className='sort'name="registered.age" onClick={handleClickSort}>Age</TableCell>
                             </TableRow>
                         </TableHead>
 
@@ -142,30 +141,29 @@ export default function AllUsers(props) {
                     </Table>
                 </Box>
             </TableContainer>
-            <div className='my-container pagination-controlers'>
+            <div className='pagination-controlers'>
                 <Button onClick={paginationDec}><ArrowLeftOutlinedIcon />Previous Page</Button>
-
-                <div style={{ width: "10%" }}>
+                {/* <div style={{ width: "10%" }}> */}
                     {(() => {
                         if (formattedPage) {
                             return (
-                                <React.Fragment>
-                                    {parseInt(formattedPage) - 1 < 0 ? "" : <Link style={{ margin: "30px" }} to={`/page/${parseInt(formattedPage) - 1}`} >{parseInt(formattedPage) - 1}</Link>}
-                                    <Link style={{ margin: "30px" }} to={`/page/${formattedPage}`}>{formattedPage}</Link>
-                                    {((parseInt(formattedPage) * 10) + 10) + 1 >= maxIndex ? "" : <Link style={{ margin: "30px" }} to={`/page/${parseInt(formattedPage) + 1}`}>{parseInt(formattedPage) + 1}</Link>}
-                                </React.Fragment>
+                                <>
+                                    {parseInt(formattedPage) - 1 < 0 ? "" : <Link to={`/page/${parseInt(formattedPage) - 1}`} >{parseInt(formattedPage) - 1}</Link>}
+                                    <Link to={`/page/${formattedPage}`}>{formattedPage}</Link>
+                                    {((parseInt(formattedPage) * 10) + 10) + 1 >= maxIndex ? "" : <Link to={`/page/${parseInt(formattedPage) + 1}`}>{parseInt(formattedPage) + 1}</Link>}
+                                </>
                             )
                         }
                         else {
                             return (
-                                <React.Fragment>
-                                    <Link style={{ margin: "30px" }} to='/page/0' >{0}</Link>
-                                    <Link style={{ margin: "30px" }} to='/page/1' >{1}</Link>
-                                </React.Fragment>
+                                <>
+                                    <Link to='/page/0' >{0}</Link>
+                                    <Link to='/page/1' >{1}</Link>
+                                </>
                             )
                         }
                     })()}
-                </div>
+                {/* </div> */}
 
                 <Button onClick={paginationInc}>Next Page<ArrowRightOutlinedIcon /></Button>
             </div>
