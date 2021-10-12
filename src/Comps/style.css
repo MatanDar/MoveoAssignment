@@ -36,10 +36,6 @@ tbody:nth-child(even) {
     background-color: rgb(241, 241, 241);
 }
 
-.red-text {
-    color: red;
-    font-size: 3em;
-}
 
 .round-pic {
     border: 1px solid white;
@@ -70,4 +66,8 @@ tbody:nth-child(even) {
 }
 .sort{
     cursor: pointer;
+}
+.table-container{
+    min-width: 980px;
+    max-width: 980px;
 }

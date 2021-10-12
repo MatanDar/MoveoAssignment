@@ -110,7 +110,7 @@ export default function AllUsers(props) {
             <h1>All Users:</h1>
             <TableContainer style={{ width: "fit-content" }} component={Paper}>
                 <Box sx={{ boxShadow: 20 }}>
-                    <Table sx={{ minWidth: 980, maxWidth: 980 }} size="small" >
+                    <Table className="table-container" size="small" >
                         <TableHead className="table-head">
                             <TableRow >
                                 <TableCell >#</TableCell>
