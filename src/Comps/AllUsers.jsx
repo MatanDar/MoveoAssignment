@@ -49,7 +49,7 @@ export default function AllUsers(props) {
             return
         }
         else {
-            history.push("/page/" + (parseInt(formattedPage) - 1))
+            history.push("/page/" + ((formattedPage * 1) - 1))
             setFormattedPage(formattedPage - 1)
             setShownUsers(props.allUsers.slice((formattedPage - 1) + "0", (parseInt((formattedPage - 1) + "0") + 10)))
             setCounter(counter - 10)
@@ -60,7 +60,7 @@ export default function AllUsers(props) {
             return
         }
         else {
-            history.push("/page/" + (parseInt(formattedPage) + 1))
+            history.push("/page/" + ((formattedPage * 1) + 1))
             setFormattedPage(formattedPage + 1)
             setShownUsers(props.allUsers.slice((formattedPage + 1) + "0", (parseInt((formattedPage + 1) + "0") + 10)))
             setCounter(counter + 10)
@@ -80,6 +80,7 @@ export default function AllUsers(props) {
                 return name.split(".").reduce((a, b) => a[b], x).localeCompare(name.split(".").reduce((a, b) => a[b], y))
             })
         }
+
         if (wasSorted) {
             setShownUsers(currentlyShownEntries.reverse())
         }
