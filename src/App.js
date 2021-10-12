@@ -25,10 +25,22 @@ function App() {
         console.log(err);
       }
     }
+    zoomOutMobile();
     fetchAllUsers()
   }, [])
 
   let location = useLocation().pathname
+
+  function zoomOutMobile() {
+    var viewport = document.querySelector('meta[name="viewport"]');
+  
+    if ( viewport ) {
+      viewport.content = "initial-scale=0.1";
+      viewport.content = "width=1200";
+    }
+  }
+  
+  
 
   return (
     <div className="App">

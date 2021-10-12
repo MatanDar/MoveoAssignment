@@ -108,7 +108,7 @@ export default function AllUsers(props) {
     return (
         <div className='page-container'>
             <h1>All Users:</h1>
-            <TableContainer style={{ width: "fit-content" }} component={Paper}>
+            <TableContainer className="container" style={{ width: "fit-content" }} component={Paper}>
                 <Box sx={{ boxShadow: 20 }}>
                     <Table className="table-container" size="small" >
                         <TableHead className="table-head">

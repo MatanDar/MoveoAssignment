@@ -69,5 +69,9 @@ tbody:nth-child(even) {
 }
 .table-container{
     min-width: 980px;
-    max-width: 980px;
 }
+
+/* th{
+    white-space: nowrap;
+
+} */
