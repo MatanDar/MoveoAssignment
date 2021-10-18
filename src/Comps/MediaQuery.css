@@ -1,32 +1,28 @@
-/* @media only screen and (max-width:728px) {
-
+@media only screen and (max-width:768px) {
     .MuiTableContainer-root {
         width: fit-content !important;
-        height: 119rem !important;
+        height: 35.6rem  !important;
     }
     .box {
         height: fit-content !important;
     }
     .css-rqglhn-MuiTable-root {
-        height: 118.6rem !important;
+        height: 35.6rem  !important;
     }
-
-    table{
-        height: 118rem !important;
-
+    table {
+        height: 35.6rem  !important;
     }
-} */
+}
 
-@media only screen and (max-width: 400px) {
-
+@media only screen and (max-width: 480px) {
     .css-11xur9t-MuiPaper-root-MuiTableContainer-root {
         width: fit-content !important;
-        height: 119rem !important;
+        height: 55.6rem !important;
     }
-    .box{
+    .box {
         height: fit-content !important;
     }
     .css-rqglhn-MuiTable-root {
-        height: 118.6rem !important;
+        height: 55.6rem !important;
     }
 }

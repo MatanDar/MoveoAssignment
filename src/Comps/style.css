@@ -76,8 +76,8 @@ tbody:nth-child(even) {
     color: red;
 }
 
-/* 
-.MuiTableContainer-root {
+
+/* .MuiTableContainer-root {
     width: fit-content !important;
     height: 119rem !important;
 }
