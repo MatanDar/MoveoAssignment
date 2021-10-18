@@ -9,10 +9,11 @@ table {
     border: 1px solid black;
     border-collapse: collapse;
 }
+
 table.center {
-    margin-left: auto; 
+    margin-left: auto;
     margin-right: auto;
-  }
+}
 
 a {
     color: #213fa0;
@@ -36,12 +37,10 @@ tbody:nth-child(even) {
     background-color: rgb(241, 241, 241);
 }
 
-
 .round-pic {
     border: 1px solid white;
     border-radius: 29px;
 }
-
 
 .pagination-controlers {
     width: 100%;
@@ -57,19 +56,39 @@ tbody:nth-child(even) {
 .all-users-style {
     box-shadow: 5px 8px red !important;
 }
-.page-container{
-    width: fit-content;
 
+.page-container {
+    width: fit-content;
 }
-.sort{
+
+.sort {
     cursor: pointer;
 }
-.table-container{
+/* 
+.table-container {
     min-width: 980px;
-}
+    height: '75vh';
+    width: '80vw';
+} */
 
-.red-text{
+.red-text {
     font-size: 10em;
     color: red;
 }
 
+/* 
+.MuiTableContainer-root {
+    width: fit-content !important;
+    height: 119rem !important;
+}
+.box {
+    height: fit-content !important;
+}
+.css-rqglhn-MuiTable-root {
+    height: 118.6rem !important;
+}
+
+table{
+    height: 118rem !important;
+
+} */

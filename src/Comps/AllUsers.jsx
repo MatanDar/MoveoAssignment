@@ -12,7 +12,7 @@ import ArrowLeftOutlinedIcon from '@mui/icons-material/ArrowLeftOutlined';
 import ArrowRightOutlinedIcon from '@mui/icons-material/ArrowRightOutlined';
 import Button from '@mui/material/Button';
 import { useHistory } from "react-router-dom";
-import '../Comps/MediaQuery.css'
+import './MediaQuery.css'    
 import {
     Link
 } from "react-router-dom";
@@ -51,6 +51,7 @@ export default function AllUsers(props) {
         else {
             history.push("/page/" + ((formattedPage * 1) - 1))
             setFormattedPage(formattedPage - 1)
+            //////
             setShownUsers(props.allUsers.slice((formattedPage - 1) + "0", (parseInt((formattedPage - 1) + "0") + 10)))
             setCounter(counter - 10)
         }
@@ -95,8 +96,8 @@ export default function AllUsers(props) {
         <div className='page-container'>
             <h1>All Users:</h1>
             <TableContainer className="container" style={{ width: "fit-content" }} component={Paper}>
-                <Box sx={{ boxShadow: 20 }}>
-                    <Table className="table-container" size="small" >
+                <Box className='box' sx={{ boxShadow: 20 }}>
+                    <Table className="table-container" >
                         <TableHead className="table-head">
                             <TableRow >
                                 <TableCell >#</TableCell>
@@ -133,7 +134,8 @@ export default function AllUsers(props) {
                     if (formattedPage) {
                         return (
                             <>
-                                {parseInt(formattedPage) - 1 < 0 ? "" : <Link to={`/page/${parseInt(formattedPage) - 1}`} >{parseInt(formattedPage) - 1}</Link>}
+                            {/* //// */}
+                                {parseInt(formattedPage) - 1 < 0 ? "" : <Link to={`/page/${parseInt(formattedPage) - 1}`}>{parseInt(formattedPage) - 1}</Link>}
                                 <Link to={`/page/${formattedPage}`}>{formattedPage}</Link>
                                 {((parseInt(formattedPage) * 10) + 10) >= maxIndex ? "" : <Link to={`/page/${parseInt(formattedPage) + 1}`}>{parseInt(formattedPage) + 1}</Link>}
                             </>

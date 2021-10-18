@@ -9,7 +9,6 @@ const MapPin = ({ pic }) => {
 }
 
 function SimpleMap(props) {
-
     return (
         // Important! Always set the container height explicitly
         <div style={{ height: '75vh', width: '80vw', marginBottom: "2em" }}>
