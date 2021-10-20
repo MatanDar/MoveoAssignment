@@ -27,8 +27,8 @@ function App() {
         console.log(err);
       }
     }
-    // zoomOutMobile();
     fetchAllUsers()
+    // zoomOutMobile();
   }, [])
 
   let location = useLocation().pathname
@@ -48,7 +48,6 @@ function App() {
         <Route path="/users/">
           <ShowUser
             username={location}
-            ////
             userObj={allUsers.filter(item => item.login.username == location.slice(location.lastIndexOf("/") + 1))} />
         </Route>
         <Route path="/">

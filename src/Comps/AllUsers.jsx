@@ -134,7 +134,6 @@ export default function AllUsers(props) {
                     if (formattedPage) {
                         return (
                             <>
-                            {/* //// */}
                                 {parseInt(formattedPage) - 1 < 0 ? "" : <Link to={`/page/${parseInt(formattedPage) - 1}`}>{parseInt(formattedPage) - 1}</Link>}
                                 <Link to={`/page/${formattedPage}`}>{formattedPage}</Link>
                                 {((parseInt(formattedPage) * 10) + 10) >= maxIndex ? "" : <Link to={`/page/${parseInt(formattedPage) + 1}`}>{parseInt(formattedPage) + 1}</Link>}

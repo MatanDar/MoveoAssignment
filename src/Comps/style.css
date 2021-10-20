@@ -64,12 +64,6 @@ tbody:nth-child(even) {
 .sort {
     cursor: pointer;
 }
-/* 
-.table-container {
-    min-width: 980px;
-    height: '75vh';
-    width: '80vw';
-} */
 
 .red-text {
     font-size: 10em;
@@ -77,18 +71,3 @@ tbody:nth-child(even) {
 }
 
 
-/* .MuiTableContainer-root {
-    width: fit-content !important;
-    height: 119rem !important;
-}
-.box {
-    height: fit-content !important;
-}
-.css-rqglhn-MuiTable-root {
-    height: 118.6rem !important;
-}
-
-table{
-    height: 118rem !important;
-
-} */
